@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import Bot
+import os
 
 Bot = commands.Bot(command_prefix= "..")
 
@@ -118,5 +119,6 @@ async def привет(ctx):
 async def Привет(ctx):
     author = ctx.message.author
     await ctx.send(f"Привет {author.mention}")
-
-Bot.run("NjQ2MDM2NjA2NzY3MjAyMzIz.XdLSgg.nYjESrj85-_Xsa4X80r2qzy_lws")
+    
+token = os.environ.get('BOT_TOKEN')
+Bot.run(str(token))
